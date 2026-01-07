@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Summoner - 隔空画符</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <div id="app">
+        <div id="rune-bg"></div> <!-- 符文背景 -->
+        <div id="video-container">
+            <video id="webcam" autoplay playsinline></video>
+            <canvas id="canvas-drawing"></canvas>
+            <canvas id="canvas-output"></canvas>
+        </div>
+
+        <div id="ui-overlay">
+            <h1>POKEMON SUMMONER</h1>
+            <div id="status">系统初始化中...</div>
+            <div id="countdown" class="hidden">3</div>
+
+            <div id="instructions">
+                <span id="close-instructions">&times;</span>
+                <p>食指指向屏幕开始画符</p>
+                <p>画完后比出 👌 (OK) 手势召唤卡片</p>
+            </div>
+
+            <div id="power-meter">
+                <div id="power-label">符文能量</div>
+                <div id="power-bar-container">
+                    <div id="power-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="card-summon-area">
+            <!-- Pokemon card will be injected here -->
+            <div id="summoning-circle"></div>
+        </div>
+
+        <div id="card-slots-container">
+            <div class="slot-label">卡片收藏槽</div>
+            <div id="slots-list">
+                <!-- Collected cards will be added here -->
+                <div class="empty-slot"></div>
+                <div class="empty-slot"></div>
+                <div class="empty-slot"></div>
+            </div>
+        </div>
+
+        <div id="loading-screen">
+            <div class="loader"></div>
+            <div id="loading-text">正在准备次元空间...</div>
+            <div id="loading-progress-container">
+                <div id="loading-progress-fill"></div>
+            </div>
+            <button id="start-btn" class="hidden">点击开启召唤</button>
+            <p id="loading-hint">请确保使用 HTTPS 访问并允许摄像头权限</p>
+        </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
